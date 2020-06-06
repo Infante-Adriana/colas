@@ -1,0 +1,83 @@
+package colas;
+
+import java.util.Scanner;
+
+
+public class Colas {
+  
+   int numero;
+    int i;
+    String nombre;
+    String vector[]=new String[numero];
+    
+public void crearvector(){
+     Scanner texto = new Scanner(System.in);
+        System.out.println("Digite el tamaño del vector: ");
+        numero = texto.nextInt(); 
+        vector=  new String[numero+1];
+    
+}
+public void agregarcola() {
+    Scanner texto = new Scanner(System.in);
+        System.out.println("Escriba un nombre: ");
+        nombre = texto.nextLine();
+        
+        vector[i++] = nombre;
+    
+}
+
+
+public void mostrarcola(){
+     for(int i=0; i<numero; i++){
+    
+            System.out.println("el nombre es: " + vector[i]);
+        
+        }
+   
+   
+}
+
+public void eliminarcola(){
+ 
+     numero--;
+      System.out.println("dato eliminado"); 
+     
+}
+    
+    public static void main(String[] args) {
+        Colas c= new Colas();
+        Scanner teclado= new Scanner (System.in);
+        String nombre;
+        int opt=0;
+        
+        c.crearvector();
+          
+        do{
+            System.out.println("1-agregar");
+            System.out.println("2-mostrar");
+            System.out.println("3-eliminar");
+   
+            switch(opt=teclado.nextInt()){
+              
+                case 1:
+                   c.agregarcola();
+                    break;
+                case 2:
+                   c.mostrarcola();
+                    break;
+                case 3:
+                   c.eliminarcola();
+                    break;
+               
+            }
+        }while (opt !=4);
+            
+    }
+}
+
+    
+
+   
+   
+   
+    
